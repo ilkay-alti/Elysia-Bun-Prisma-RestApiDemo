@@ -2,11 +2,21 @@
   "name": "bun-elsia-prisma-restApi",
   "version": "1.0.50",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "test": "bun test",
+    "dev": "bun run --watch src/index.ts",
+    "seed": "bunx prisma db seed"
+  },
+  "prisma": {
+    "seed": "node src/scripts/seed.js"
   },
   "dependencies": {
-    "elysia": "latest"
+    "@elysiajs/swagger": "^0.8.5",
+    "@prisma/client": "5.10.2",
+    "axios": "^1.6.7",
+    "elysia": "^0.8.17",
+    "pino": "^8.19.0",
+    "pino-pretty": "^10.3.1",
+    "prisma": "^5.10.2"
   },
   "devDependencies": {
     "bun-types": "latest"
